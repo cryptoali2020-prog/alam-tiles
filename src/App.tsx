@@ -42,18 +42,20 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex flex-col"
-        >
-          <span className={`text-2xl font-display font-bold leading-tight ${isScrolled ? 'text-black' : 'text-white'}`}>
-            ALAMZEB
-          </span>
-          <span className={`text-[10px] uppercase tracking-[0.3em] font-accent font-medium ${isScrolled ? 'text-gold' : 'text-white/70'}`}>
-            Tiles & Flooring
-          </span>
-        </motion.div>
+        <a href="https://alam-tiles.vercel.app/">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex flex-col"
+          >
+            <span className={`text-2xl font-display font-bold leading-tight ${isScrolled ? 'text-black' : 'text-white'}`}>
+              ALAMZEB
+            </span>
+            <span className={`text-[10px] uppercase tracking-[0.3em] font-accent font-medium ${isScrolled ? 'text-gold' : 'text-white/70'}`}>
+              Tiles & Flooring
+            </span>
+          </motion.div>
+        </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
@@ -71,13 +73,16 @@ const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          <motion.button
+          <motion.a
+            href="https://wa.me/923482192280"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gold px-6 py-2.5 rounded-full text-white text-xs uppercase tracking-widest font-accent font-bold"
           >
             Get Quote
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Mobile Toggle */}
@@ -113,9 +118,14 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-dark text-white py-4 rounded-xl font-accent uppercase tracking-widest text-sm font-bold">
+              <a 
+                href="https://wa.me/923482192280"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-dark text-white py-4 rounded-xl font-accent uppercase tracking-widest text-sm font-bold text-center"
+              >
                 Request a Quote
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
@@ -240,9 +250,12 @@ const Hero = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <button className="w-full sm:w-auto bg-white text-dark px-10 py-5 rounded-full font-accent font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-white transition-all duration-300">
+          <a 
+            href="https://alam-tiles.vercel.app/#collections"
+            className="w-full sm:w-auto bg-white text-dark px-10 py-5 rounded-full font-accent font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-white transition-all duration-300 text-center"
+          >
             View Collection
-          </button>
+          </a>
           <button className="w-full sm:w-auto glass hover:bg-white/20 px-10 py-5 rounded-full font-accent font-bold uppercase tracking-widest text-xs text-white transition-all duration-300">
             Get Free Quote
           </button>
@@ -705,9 +718,14 @@ const Footer = () => {
                Crafting timeless surfaces for the world's most beautiful homes since 1998.
              </p>
              <div className="flex gap-4">
-               {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                 <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-dark transition-all duration-300">
-                   <Icon size={18} />
+               {[
+                 { Icon: Instagram, href: "#" }, 
+                 { Icon: Facebook, href: "#" }, 
+                 { Icon: Twitter, href: "#" },
+                 { Icon: Phone, href: "https://wa.me/923482192280" }
+               ].map((social, i) => (
+                 <a key={i} href={social.href} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-dark transition-all duration-300">
+                   <social.Icon size={18} />
                  </a>
                ))}
              </div>
