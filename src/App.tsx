@@ -741,7 +741,7 @@ const Footer = () => {
 
 const WhatsAppButton = () => (
   <motion.a
-    href="https://wa.me/15559876543"
+    href="https://wa.me/923482192280"
     target="_blank"
     rel="noopener noreferrer"
     initial={{ scale: 0, opacity: 0 }}
@@ -780,13 +780,13 @@ const BackToTop = () => {
   );
 };
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      transition={{ delay: 2, duration: 1 }}
-      onAnimationComplete={() => document.body.style.overflow = 'auto'}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
       className="fixed inset-0 z-[1000] bg-dark flex flex-col items-center justify-center"
     >
       <motion.div
@@ -804,7 +804,8 @@ const LoadingScreen = () => {
         <motion.div 
            initial={{ x: '-100%' }}
            animate={{ x: '100%' }}
-           transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+           transition={{ duration: 1, ease: 'easeInOut' }}
+           onAnimationComplete={onComplete}
            className="w-full h-full bg-gold"
         />
       </motion.div>
@@ -813,13 +814,21 @@ const LoadingScreen = () => {
 };
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-  }, []);
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isLoading]);
 
   return (
-    <main className="relative select-none selection:bg-gold selection:text-white">
-      <LoadingScreen />
+    <main className="relative selection:bg-gold selection:text-white">
+      <AnimatePresence>
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
       <ScrollProgress />
       <Navbar />
       <Hero />
