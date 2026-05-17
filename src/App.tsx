@@ -357,7 +357,7 @@ const About = () => {
 
 const Collections = () => {
   const items = [
-    { name: "Carrara Marble", category: "Marble", img: "https://images.unsplash.com/photo-1620626011761-9963d7b59675?q=80&w=2670&auto=format&fit=crop" },
+    { name: "Carrara Marble", category: "Marble", img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2670&auto=format&fit=crop" },
     { name: "Zen Porcelain", category: "Porcelain", img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=2592&auto=format&fit=crop" },
     { name: "Royal Mosaic", category: "Mosaic", img: "https://images.unsplash.com/photo-1615529151169-7b1ff50dc7f2?q=80&w=2574&auto=format&fit=crop" },
     { name: "Rustic Clay", category: "Ceramic", img: "https://images.unsplash.com/photo-1520699049698-acd2fccb8cc8?q=80&w=2600&auto=format&fit=crop" },
@@ -386,8 +386,8 @@ const Collections = () => {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 alt={item.name}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-10 left-10 right-10 translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-100 group-hover:opacity-80 transition-opacity duration-500" />
+              <div className="absolute bottom-10 left-10 right-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="text-gold font-accent text-[10px] uppercase tracking-[0.3em] font-bold block mb-2">{item.category}</span>
                 <h3 className="text-white text-3xl font-display mb-4">{item.name}</h3>
                 <div className="flex items-center gap-2 text-white/70 text-xs font-accent uppercase tracking-widest font-bold">
