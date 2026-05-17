@@ -256,9 +256,14 @@ const Hero = () => {
           >
             View Collection
           </a>
-          <button className="w-full sm:w-auto glass hover:bg-white/20 px-10 py-5 rounded-full font-accent font-bold uppercase tracking-widest text-xs text-white transition-all duration-300">
+          <a 
+            href="https://wa.me/923482192280"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto glass hover:bg-white/20 px-10 py-5 rounded-full font-accent font-bold uppercase tracking-widest text-xs text-white transition-all duration-300 text-center"
+          >
             Get Free Quote
-          </button>
+          </a>
         </motion.div>
       </div>
 
@@ -713,6 +718,9 @@ const Footer = () => {
              <div>
               <span className="text-3xl font-display font-bold leading-tight block">ALAMZEB</span>
               <span className="text-[10px] uppercase tracking-[0.3em] font-accent font-medium text-gold">Tiles & Flooring</span>
+              <a href="https://wa.me/923482192280" target="_blank" rel="noopener noreferrer" className="block mt-2 text-white/60 hover:text-white transition-colors text-xs font-accent tracking-widest">
+                +92 348 2192280
+              </a>
              </div>
              <p className="text-white/40 leading-relaxed font-sans pr-4">
                Crafting timeless surfaces for the world's most beautiful homes since 1998.
