@@ -209,11 +209,30 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-white/70 font-sans mb-12"
+          className="max-w-2xl mx-auto text-lg md:text-xl text-white/70 font-sans mb-6"
         >
           Elevate your living spaces with our curated collection of premium tiles and flooring. 
           Where artisanal craftsmanship meets modern sophistication.
         </motion.p>
+
+        <motion.div
+           initial={{ opacity: 0, scale: 0.8 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ delay: 0.5, duration: 0.8 }}
+           className="mb-12"
+        >
+          <a 
+            href="https://wa.me/923482192280" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center gap-2 hover:opacity-80 transition-all"
+          >
+            <span className="text-[10px] uppercase tracking-[0.5em] text-gold font-accent font-bold">Expert Consultation</span>
+            <span className="text-3xl md:text-5xl font-display font-medium text-white tracking-widest border-b border-white/10 pb-2">
+              +92 348 2192280
+            </span>
+          </a>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
